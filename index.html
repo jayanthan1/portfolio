@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jayanthan A K - Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Swiper CSS for certificate carousel -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo">Jayanthan</a>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#certificates">Certificates</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-toggle" title="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container text-center">
+            <div class="hero-content">
+                <h1>Hello, I am Jayanthan A K</h1>
+                <h3>UI/UX Designer & Data Analyst</h3>
+                <div class="hero-info">
+                    <div class="hero-info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>jayanthan1901@gmail.com</span>
+                    </div>
+                    <div class="hero-info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Tiruchirappalli, Tamil Nadu</span>
+                    </div>
+                    <div class="hero-info-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>3rd Year Student at K.Ramakrishnan College of Engineering</span>
+                    </div>
+                </div>
+                <div class="hero-btns">
+                    <a href="Resume.pdf" class="btn btn-primary" id="resume-btn" target="_blank" download>View Resume</a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+                <p>Here's some information about my background and skills</p>
+            </div>
+            <div class="about-content text-center">
+                <div class="about-image-container">
+                    <img src="aboutus.JPG" alt="Jayanthan A K" id="about-image" class="about-img">
+                </div>
+                <div class="about-text">
+                    <h3>UI/UX Designer & Web Developer</h3>
+                    <p>I am Jayanthan A K, a passionate third-year college student at K.Ramakrishnan College of Engineering with expertise in UI/UX design, data analytics, and web development. I am technically strong in Python and have completed Japanese N5 level certification.</p>
+                    <p>With a keen eye for design and analytical thinking, I strive to create meaningful digital experiences that are both aesthetically pleasing and functionally robust.</p>
+                    <div class="about-info">
+                        <div class="about-info-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>UI/UX Design</span>
+                        </div>
+                        <div class="about-info-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Data Analytics</span>
+                        </div>
+                        <div class="about-info-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Web Development</span>
+                        </div>
+                        <div class="about-info-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Python Programming</span>
+                        </div>
+                        <div class="about-info-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Japanese (N5 Level)</span>
+                        </div>
+                        <div class="about-info-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Problem Solving</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="certificates section">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Certificates</h2>
+                <p>A showcase of my achievements and credentials</p>
+            </div>
+            <div class="certificates-grid">
+                <!-- Certificate Items -->
+                <div class="certificate-item" data-title="Japanese N5 Certification" data-image="n5_1.jpg" data-issuer="Japan Foundation" data-date="January 2023" data-description="Successfully completed and passed the Japanese Language Proficiency Test Level N5, demonstrating basic understanding of Japanese language.">
+                    <div class="certificate-img">
+                        <img src="n5_1.jpg" alt="Japanese N5 Certificate" id="cert1-image">
+                    </div>
+                    <div class="certificate-info">
+                        <h4>Japanese N5 Certification</h4>
+                        <p>Click to view details</p>
+                    </div>
+                </div>
+                <div class="certificate-item" data-title="Web Development Bootcamp" data-image="placeholder-cert2.jpg" data-issuer="Udemy" data-date="March 2023" data-description="Completed comprehensive web development bootcamp covering HTML, CSS, JavaScript, and modern frameworks.">
+                    <div class="certificate-img">
+                        <img src="placeholder-cert2.jpg" alt="Web Development Certificate" id="cert2-image">
+                    </div>
+                    <div class="certificate-info">
+                        <h4>Web Development Bootcamp</h4>
+                        <p>Click to view details</p>
+                    </div>
+                </div>
+                <div class="certificate-item" data-title="Data Analytics with Python" data-image="placeholder-cert3.jpg" data-issuer="Coursera" data-date="May 2023" data-description="Mastered data analysis techniques using Python, including pandas, NumPy, and data visualization libraries.">
+                    <div class="certificate-img">
+                        <img src="placeholder-cert3.jpg" alt="Data Analytics Certificate" id="cert3-image">
+                    </div>
+                    <div class="certificate-info">
+                        <h4>Data Analytics with Python</h4>
+                        <p>Click to view details</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificate Modal -->
+    <div class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Certificate Title</h3>
+                <div class="close-modal"><i class="fas fa-times"></i></div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-img">
+                    <img src="" alt="Certificate">
+                </div>
+                <div class="modal-info">
+                    <div class="info-item">
+                        <strong>Issuer:</strong>
+                        <span class="issuer-value">Organization Name</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Date:</strong>
+                        <span class="date-value">Month Year</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Description:</strong>
+                        <p class="description-value">Certificate description goes here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Projects</h2>
+                <p>Check out some of my recent work</p>
+            </div>
+            <div class="projects-grid centered-grid">
+                <!-- Project 1 -->
+                <div class="project-item">
+                    <div class="project-img">
+                        <img src="placeholder-project1.jpg" alt="Project 1" id="project1-image">
+                        <div class="project-overlay">
+                            <a href="https://github.com/username/project1" target="_blank" title="View on GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h4>Data Visualization Dashboard</h4>
+                        <p>A responsive dashboard for visualizing complex datasets using Python and modern web technologies.</p>
+                        <div class="technologies">
+                            <span>Python</span>
+                            <span>Flask</span>
+                            <span>D3.js</span>
+                            <span>Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-item">
+                    <div class="project-img">
+                        <img src="placeholder-project2.jpg" alt="Project 2" id="project2-image">
+                        <div class="project-overlay">
+                            <a href="https://github.com/username/project2" target="_blank" title="View on GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h4>E-commerce UI Redesign</h4>
+                        <p>A complete UI/UX redesign for an e-commerce platform focusing on user experience and modern design principles.</p>
+                        <div class="technologies">
+                            <span>Figma</span>
+                            <span>HTML/CSS</span>
+                            <span>JavaScript</span>
+                            <span>React</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="project-item">
+                    <div class="project-img">
+                        <img src="placeholder-project3.jpg" alt="Project 3" id="project3-image">
+                        <div class="project-overlay">
+                            <a href="https://github.com/username/project3" target="_blank" title="View on GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h4>Japanese Learning App</h4>
+                        <p>An interactive web application to help users learn Japanese, featuring vocabulary, grammar, and practice exercises.</p>
+                        <div class="technologies">
+                            <span>Python</span>
+                            <span>Django</span>
+                            <span>JavaScript</span>
+                            <span>SCSS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Let's Connect</h2>
+                <p>Feel free to get in touch with me</p>
+            </div>
+            <div class="contact-wrapper centered-contact">
+                <div class="contact-info text-center">
+                    <h3>Contact Information</h3>
+                    <p>I'm interested in freelance opportunities and collaborations. If you have any questions or just want to say hi, don't hesitate to contact me.</p>
+                    
+                    <div class="contact-items-container">
+    <div class="contact-item copyable" data-copy="jayanthan1901@gmail.com">
+        <i class="fas fa-envelope"></i>
+        <div class="contact-text">
+            <h4>Email</h4>
+            <p>jayanthan1901@gmail.com</p>
+        </div>
+    </div>
+    <div class="contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <div class="contact-text">
+            <h4>Location</h4>
+            <p>Tiruchirappalli, Tamil Nadu</p>
+        </div>
+    </div>
+    <div class="contact-item copyable" data-copy="9688866775">
+        <i class="fas fa-phone-alt"></i>
+        <div class="contact-text">
+            <h4>Phone</h4>
+            <p>9688866775</p>
+        </div>
+    </div>
+</div>
+<div class="social-links enhanced-social">
+    <a href="https://github.com/jayanthan1" target="_blank" title="GitHub" class="social-icon"><i class="fab fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/jayanthan-a-k-48ab36257" target="_blank" title="LinkedIn" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://www.instagram.com/iam__jayanthan/" target="_blank" title="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
+</div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send Me a Message</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" id="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <h3>About This Portfolio</h3>
+                <p>This portfolio was designed and developed by Jayanthan A K. It showcases my skills, projects, and achievements. I am passionate about creating impactful digital experiences and always looking for new challenges.</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Jayanthan A K. Thank you for visiting my portfolio.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
