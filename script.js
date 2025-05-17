@@ -88,15 +88,44 @@ document.addEventListener('DOMContentLoaded', function() {
         item.addEventListener('click', function() {
             const title = this.getAttribute('data-title');
             const image = this.getAttribute('data-image');
-            const issuer = this.getAttribute('data-issuer');
+            const badge = title.match(/N[0-9]+/) ? title.match(/N[0-9]+/)[0] : '';
             const date = this.getAttribute('data-date');
             const description = this.getAttribute('data-description');
+            const credentialId = this.getAttribute('data-credential-id');
+            const score = this.getAttribute('data-score');
             
-            document.querySelector('.modal-header h3').textContent = title;
-            document.querySelector('.modal-img img').src = image;
-            document.querySelector('.issuer-value').textContent = issuer;
-            document.querySelector('.date-value').textContent = date;
+            document.getElementById('modal-title').textContent = title;
+            document.getElementById('modal-certificate-img').src = image;
+            document.getElementById('modal-badge').textContent = badge;
             document.querySelector('.description-value').textContent = description;
+            document.querySelector('.date-value').textContent = date;
+
+            // Score pill logic
+            const scoreRow = document.getElementById('score-row');
+            if (score && score.trim() !== '') {
+                scoreRow.style.display = '';
+                scoreRow.querySelector('.score-value').textContent = score;
+            } else {
+                scoreRow.style.display = 'none';
+            }
+
+            // Credential ID pill logic
+            const credentialRow = document.getElementById('credential-id-row');
+            if (credentialId && credentialId.trim() !== '') {
+                credentialRow.style.display = '';
+                credentialRow.querySelector('.credential-id-value').textContent = credentialId;
+            } else {
+                credentialRow.style.display = 'none';
+            }
+
+            // Full certificate logic
+            const fullCertRow = document.getElementById('full-certificate-row');
+            if (image) {
+                fullCertRow.style.display = 'flex';
+                document.getElementById('full-certificate-img').src = image;
+            } else {
+                fullCertRow.style.display = 'none';
+            }
             
             modal.style.display = 'flex';
             setTimeout(() => {
