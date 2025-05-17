@@ -119,31 +119,40 @@
             </div>
             <div class="certificates-grid">
                 <!-- Certificate Items -->
-                <div class="certificate-item" data-title="Japanese N5 Certification" data-image="n5_1.jpg" data-issuer="Japan Foundation" data-date="January 2023" data-description="Successfully completed and passed the Japanese Language Proficiency Test Level N5, demonstrating basic understanding of Japanese language.">
+                <div class="certificate-item" data-title="Japanese N5 Certification" data-image="n5_1.jpg" data-issuer="Japan Foundation" data-date="January 2023" data-description="The JLPT N5 is the beginner level of the Japanese Language Proficiency Test, assessing basic grammar, vocabulary, and reading/listening skills. It's ideal for those just starting their Japanese learning journey." data-certificate-link="n5_1.jpg" data-credential-id="15001301" data-score="150/180">
                     <div class="certificate-img">
-                        <img src="n5_1.jpg" alt="Japanese N5 Certificate" id="cert1-image">
+                        <a href="n5_1.jpg" target="_blank">
+                            <img src="n5_1.jpg" alt="Japanese N5 Certificate" id="cert1-image" style="max-height: 180px; object-fit: contain; background: #fff; padding: 10px; border-radius: 8px;">
+                        </a>
                     </div>
                     <div class="certificate-info">
                         <h4>Japanese N5 Certification</h4>
-                        <p>Click to view details</p>
+                        <div class="certificate-desc">The JLPT N5 is the beginner level of the Japanese Language Proficiency Test, assessing basic grammar, vocabulary, and reading/listening skills. It's ideal for those just starting their Japanese learning journey.</div>
+                        <p>Click to view details or <a href="n5_1.jpg" target="_blank">view certificate image</a></p>
                     </div>
                 </div>
-                <div class="certificate-item" data-title="Web Development Bootcamp" data-image="placeholder-cert2.jpg" data-issuer="Udemy" data-date="March 2023" data-description="Completed comprehensive web development bootcamp covering HTML, CSS, JavaScript, and modern frameworks.">
+                <div class="certificate-item" data-title="AWS Certified Cloud Practitioner" data-image="AWS Certified Cloud Practitioner certificate (1)_page-0001.jpg" data-issuer="Amazon Web Services (AWS)" data-date="May 2025" data-description="The AWS Certified Cloud Practitioner validates foundational knowledge of AWS Cloud concepts, services, and terminology. It's ideal for individuals in technical, managerial, or sales roles seeking cloud fluency." data-certificate-link="AWS Certified Cloud Practitioner certificate (1)_page-0001.jpg" data-credential-id="AWS-CERT-123456" data-score="">
                     <div class="certificate-img">
-                        <img src="placeholder-cert2.jpg" alt="Web Development Certificate" id="cert2-image">
+                        <a href="AWS Certified Cloud Practitioner certificate (1)_page-0001.jpg" target="_blank">
+                            <img src="AWS Certified Cloud Practitioner certificate (1)_page-0001.jpg" alt="AWS Certified Cloud Practitioner Certificate" id="cert2-image" style="max-height: 180px; object-fit: contain; background: #fff; padding: 10px; border-radius: 8px;">
+                        </a>
                     </div>
                     <div class="certificate-info">
-                        <h4>Web Development Bootcamp</h4>
-                        <p>Click to view details</p>
+                        <h4>AWS Certified Cloud Practitioner</h4>
+                        <div class="certificate-desc">The AWS Certified Cloud Practitioner validates foundational knowledge of AWS Cloud concepts, services, and terminology. It's ideal for individuals in technical, managerial, or sales roles seeking cloud fluency.</div>
+                        <p>Click to view details or <a href="AWS Certified Cloud Practitioner certificate (1)_page-0001.jpg" target="_blank">view certificate image</a></p>
                     </div>
                 </div>
-                <div class="certificate-item" data-title="Data Analytics with Python" data-image="placeholder-cert3.jpg" data-issuer="Coursera" data-date="May 2023" data-description="Mastered data analysis techniques using Python, including pandas, NumPy, and data visualization libraries.">
+                <div class="certificate-item" data-title="TCS CodeVita Season 12" data-image="TCS CodeVita Season 12 Certificate - jayanthan__page-0001.jpg" data-issuer="Tata Consultancy Services" data-date="August 2024" data-description="Secured a global rank of 665 in TCS CodeVita Season 12, one of the world’s largest coding competitions. Demonstrated strong problem-solving skills and consistency among over 100,000 participants worldwide." data-certificate-link="TCS CodeVita Season 12 Certificate - jayanthan__page-0001.jpg" data-credential-id="" data-score="Global Rank: 665">
                     <div class="certificate-img">
-                        <img src="placeholder-cert3.jpg" alt="Data Analytics Certificate" id="cert3-image">
+                        <a href="TCS CodeVita Season 12 Certificate - jayanthan__page-0001.jpg" target="_blank">
+                            <img src="TCS CodeVita Season 12 Certificate - jayanthan__page-0001.jpg" alt="TCS CodeVita Season 12 Certificate" id="cert3-image" style="max-height: 180px; object-fit: contain; background: #fff; padding: 10px; border-radius: 8px;">
+                        </a>
                     </div>
                     <div class="certificate-info">
-                        <h4>Data Analytics with Python</h4>
-                        <p>Click to view details</p>
+                        <h4>TCS CodeVita Season 12</h4>
+                        <div class="certificate-desc">Secured a global rank of 665 in TCS CodeVita Season 12, one of the world’s largest coding competitions. Demonstrated strong problem-solving skills and consistency among over 100,000 participants worldwide.</div>
+                        <p>Click to view details or <a href="TCS CodeVita Season 12 Certificate - jayanthan__page-0001.jpg" target="_blank">view certificate image</a></p>
                     </div>
                 </div>
             </div>
@@ -152,28 +161,25 @@
 
     <!-- Certificate Modal -->
     <div class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Certificate Title</h3>
+        <div class="modal-content certificate-modal-card">
+            <div class="modal-header card-header-flex">
+                <div class="modal-badge" id="modal-badge">N5</div>
+                <h3 class="modal-title" id="modal-title">Certificate Title</h3>
                 <div class="close-modal"><i class="fas fa-times"></i></div>
             </div>
-            <div class="modal-body">
-                <div class="modal-img">
-                    <img src="" alt="Certificate">
+            <div class="modal-body card-body-flex">
+                <div class="modal-img-card">
+                    <img src="" alt="Certificate" id="modal-certificate-img">
                 </div>
-                <div class="modal-info">
-                    <div class="info-item">
-                        <strong>Issuer:</strong>
-                        <span class="issuer-value">Organization Name</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>Date:</strong>
-                        <span class="date-value">Month Year</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>Description:</strong>
-                        <p class="description-value">Certificate description goes here</p>
-                    </div>
+                <blockquote class="modal-description-card">
+                    <i class="fas fa-quote-left"></i>
+                    <span class="description-value">Certificate description goes here</span>
+                    <i class="fas fa-quote-right"></i>
+                </blockquote>
+                <div class="modal-pill-row">
+                    <div class="modal-pill issued-pill"><i class="fas fa-calendar-alt"></i> <span class="date-value">Month Year</span></div>
+                    <div class="modal-pill score-pill" id="score-row" style="display:none;"><i class="fas fa-certificate"></i> <span class="score-value"></span></div>
+                    <div class="modal-pill credential-pill" id="credential-id-row" style="display:none;"><i class="fas fa-id-badge"></i> <span class="credential-id-value"></span></div>
                 </div>
             </div>
         </div>
@@ -190,18 +196,20 @@
                 <!-- Project 1 -->
                 <div class="project-item">
                     <div class="project-img">
-                        <img src="placeholder-project1.jpg" alt="Project 1" id="project1-image">
+                        <img src="placeholder-project1.jpg" alt="Smart Resume Tracker and Job Matching System" id="project1-image">
                         <div class="project-overlay">
-                            <a href="https://github.com/username/project1" target="_blank" title="View on GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://github.com/jayanthan1/Resume_Tracker" target="_blank" title="View on GitHub"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                     <div class="project-info">
-                        <h4>Data Visualization Dashboard</h4>
-                        <p>A responsive dashboard for visualizing complex datasets using Python and modern web technologies.</p>
+                        <h4>Smart Resume Tracker and Job Matching System</h4>
+                        <p>Applicants can register, upload resumes, and are categorized as fresher or experienced. Certificates are AI-verified via Credly and NAD APIs, and resume weightage is shown based on job relevance. HRs manage job posts and view AI-ranked applicants.</p>
                         <div class="technologies">
                             <span>Python</span>
                             <span>Flask</span>
-                            <span>D3.js</span>
+                            <span>MySQL</span>
+                            <span>HTML</span>
+                            <span>CSS</span>
                             <span>Bootstrap</span>
                         </div>
                     </div>
@@ -209,38 +217,24 @@
                 <!-- Project 2 -->
                 <div class="project-item">
                     <div class="project-img">
-                        <img src="placeholder-project2.jpg" alt="Project 2" id="project2-image">
+                        <img src="placeholder-project2.jpg" alt="AI Health Pathway – Disease Prediction & Recommendation System" id="project2-image">
                         <div class="project-overlay">
-                            <a href="https://github.com/username/project2" target="_blank" title="View on GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://github.com/jayanthan1/Health_Care_System" target="_blank" title="View on GitHub"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                     <div class="project-info">
-                        <h4>E-commerce UI Redesign</h4>
-                        <p>A complete UI/UX redesign for an e-commerce platform focusing on user experience and modern design principles.</p>
-                        <div class="technologies">
-                            <span>Figma</span>
-                            <span>HTML/CSS</span>
-                            <span>JavaScript</span>
-                            <span>React</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project 3 -->
-                <div class="project-item">
-                    <div class="project-img">
-                        <img src="placeholder-project3.jpg" alt="Project 3" id="project3-image">
-                        <div class="project-overlay">
-                            <a href="https://github.com/username/project3" target="_blank" title="View on GitHub"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h4>Japanese Learning App</h4>
-                        <p>An interactive web application to help users learn Japanese, featuring vocabulary, grammar, and practice exercises.</p>
+                        <h4>AI Health Pathway – Disease Prediction & Recommendation System</h4>
+                        <p>Developed an AI-powered health diagnostic tool to predict diseases like diabetes, heart disease, and cancer using user data and medical PDF reports. Generated personalized disease progression timelines with adaptive health strategies based on evolving user metrics.</p>
                         <div class="technologies">
                             <span>Python</span>
-                            <span>Django</span>
-                            <span>JavaScript</span>
-                            <span>SCSS</span>
+                            <span>Flask</span>
+                            <span>MySQL</span>
+                            <span>scikit-learn</span>
+                            <span>PyMuPDF</span>
+                            <span>Chart.js</span>
+                            <span>Bootstrap</span>
+                            <span>HTML</span>
+                            <span>CSS</span>
                         </div>
                     </div>
                 </div>
