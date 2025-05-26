@@ -7,6 +7,11 @@ const EMAILJS_USER_ID = 'zxuDPgsWZapsIrlha'; // User's actual EmailJS user id (p
 const EMAILJS_SERVICE_ID = 'service_z355agl'; // User's actual EmailJS service id
 const EMAILJS_TEMPLATE_ID = 'template_rihxiqp'; // User's actual EmailJS template id
 
+// Initialize EmailJS when the page loads
+document.addEventListener('DOMContentLoaded', function() {
+    emailjs.init(EMAILJS_USER_ID);
+});
+
 // Dark theme toggle
 const themeToggle = document.getElementById('theme-toggle');
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -59,15 +64,19 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
-    const navClose = document.querySelector('.nav-close');
 
-    hamburger.addEventListener('click', function() {
-        navMenu.classList.add('active');
-    });
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
 
-    navClose.addEventListener('click', function() {
-        navMenu.classList.remove('active');
-    });
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target) && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+            }
+        });
+    }
 
     // Header scroll effect
     window.addEventListener('scroll', function() {
@@ -216,42 +225,55 @@ document.addEventListener('DOMContentLoaded', function() {
     // Form submission
     const contactForm = document.getElementById('contact-form');
     
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const name = this.querySelector('#name').value;
-        const email = this.querySelector('#email').value;
-        const subject = this.querySelector('#subject').value;
-        const message = this.querySelector('#message').value;
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const name = this.querySelector('#name').value;
+            const email = this.querySelector('#email').value;
+            const subject = this.querySelector('#subject').value;
+            const message = this.querySelector('#message').value;
 
-        if (!EMAILJS_USER_ID || !EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || EMAILJS_USER_ID.includes('YOUR_')) {
-            showToast('Please configure your EmailJS keys in script.js');
-            return;
-        }
+            if (!EMAILJS_USER_ID || !EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID) {
+                showToast('Please configure your EmailJS keys in script.js');
+                return;
+            }
 
-        emailjs.init(EMAILJS_USER_ID);
-        emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-            name: name,
-            email: email,
-            subject: subject,
-            message: message
-        }).then(function(response) {
-            showToast('Message sent successfully!');
-            contactForm.reset();
-        }, function(error) {
-            showToast('Failed to send message. Please try again.');
+            // Show loading indicator
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            try {
+                console.log('Sending email...', {
+                    name,
+                    email,
+                    subject,
+                    message
+                });
+                
+                // Send the email using EmailJS
+                const response = await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+                    name: name,
+                    email: email,
+                    subject: subject,
+                    message: message
+                });
+                
+                console.log('Email sent successfully:', response);
+                showToast('Message sent successfully!');
+                this.reset();
+            } catch (error) {
+                console.error('EmailJS error:', error);
+                showToast('Failed to send message. Please try again.');
+            } finally {
+                // Restore button state
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+            }
         });
-        // })
-        // .then(response => {
-        //     showToast('Message sent successfully!');
-        //     contactForm.reset();
-        // })
-        // .catch(error => {
-        //     showToast('Failed to send message. Please try again.');
-        // });
-        
-        // For now, just simulate success
-        showToast('Message sent successfully!');
-        contactForm.reset();
-    });
+    } else {
+        console.error('Contact form not found!');
+    }
 });
